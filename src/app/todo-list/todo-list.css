@@ -1,0 +1,18 @@
+li{
+    cursor: pointer;
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 1px solid gray;
+}
+.selected{
+    background-color: turquoise;
+    font-weight: bold;
+}
+.details{
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid grey;
+}
+.completed{
+    background-color: green;
+}

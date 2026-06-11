@@ -1,0 +1,31 @@
+<h2>{{title}}</h2>
+<ul> 
+    @for (task of tasks; track task)
+    {
+        <li (click)="selectTask(task)"
+        [class.selected]="task === selectedTask"
+        [class.completed]="task === selectedTask"> 
+            {{ task.id }}. {{task.name}} - {{ task.priority }} - {{ task.completed ? "Готово" : "Не готово" }}
+        </li>
+        <button (click)="toggleComponent(task)">changeStatus</button>
+        <button (click)="deleteTask(task)">Удалить</button>
+    }
+</ul>
+@if(selectedTask){
+    <div class="details">
+        <h3>Выбранная задача</h3>
+        <p>Название:{{selectedTask.name}}</p>
+        <p>приоретет:{{selectedTask.priority}}</p>
+        <p>DeadLine:{{selectedTask.deadline}}</p>
+        <p>Статус:{{selectedTask.completed}}</p>
+    </div>
+}
+@if(selectedTask?.completed===true){
+    <div class="details">
+        <h3>Готово:</h3>
+        <p>Название:{{selectedTask.name}}</p>
+    </div>
+}
+<!-- <button (click)="toggleComponent(selectedTask)">changeStatus</button>
+<button (click)="deleteTask(selectedTask)">Удалить</button> -->
+<p>{{userName}}</p>
